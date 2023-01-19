@@ -1,0 +1,33 @@
+.vuelo_card{
+    max-height: 130px;
+    /* min-height: 100px; */
+    object-fit: cover;
+}
+
+.card-body{
+    padding: 1rem !important;
+}
+
+.empresa{
+    font-weight: 600;
+    margin: 0 !important;
+}
+
+.ruta{
+    font-weight: 600;
+    margin: 0 !important;
+}
+
+.hr-sep{
+    margin-top: .5rem !important;
+    margin-bottom: .5rem !important;
+}
+
+.descripcion{
+    font-size: 14px;
+}
+
+.precio{
+    font-size: 24px;
+    font-weight: 600;
+}

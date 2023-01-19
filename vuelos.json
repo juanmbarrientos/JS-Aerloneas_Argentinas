@@ -1,0 +1,42 @@
+[
+    {
+        "index": 1,
+        "foto": "aerolineas.jpg",
+        "empresa": "Aerolineas Argentinas",
+        "ruta": "CBA - BRC",
+        "descripción": "Disfrutá del encato de la Patagonia. Pasaje ida y vuelta desde Córdoba a Bariloche con equipaje incluido.",
+        "ida": "",
+        "vuelta": "",
+        "precio": 15000
+    },
+    {
+        "index": 2,
+        "foto": "flybondi.jpg",
+        "empresa": "FlyBondi",
+        "ruta": "CBA - IGZ",
+        "descripción": "Visita una de las 7 maravillas del mundo. Pasaje ida y vuelta desde Córdoba a Puerto Iguazú con equipaje incluido.",
+        "ida": "",
+        "vuelta": "",
+        "precio": 12000
+    },
+    {
+        "index": 3,
+        "foto": "jetsmart.jpg",
+        "empresa": "JetSmart",
+        "ruta": "CBA - AEP",
+        "descripción": "Capital del Tango. Pasaje ida y vuelta desde Córdoba a Buenos Aires con equipaje de mano incluido",
+        "ida": "",
+        "vuelta": "",
+        "precio": 9000
+    },
+    {
+        "index": 4,
+        "foto": "jetsmart.jpg",
+        "empresa": "JetSmart",
+        "ruta": "ROS - AEP",
+        "descripción": "Capital del Tango. Pasaje ida y vuelta desde Córdoba a Buenos Aires con equipaje de mano incluido",
+        "ida": "",
+        "vuelta": "",
+        "precio": 6000
+    }
+]
