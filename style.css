@@ -1,6 +1,21 @@
+
+.titulos{
+    font-weight: 600;
+    font-size: 24;
+}
+
+.container_portada{
+    height: 180px;
+    background-image: url(vuelo_portada.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: fill;
+}
+
 .vuelo_card{
     max-height: 130px;
-    /* min-height: 100px; */
+
     object-fit: cover;
 }
 

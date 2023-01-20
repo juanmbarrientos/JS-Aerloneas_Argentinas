@@ -67,7 +67,7 @@ function traerDatos(){
 
             for(let item of datos){
                 res.innerHTML += `
-                <div class="col col-3">               
+                <div class="col col-lg-3 col-md-6 col-12">               
                     <div class="card rounded mb-5">
                         <img src="${item.foto}" class="vuelo_card" alt="...">
                         <div class="card-body">
