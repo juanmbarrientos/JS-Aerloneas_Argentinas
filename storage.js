@@ -2,13 +2,13 @@
     function guardar(){
         let txtNombre = document.getElementById("txtNombre").value;
         let txtApellido = document.getElementById("txtApellido").value;
-        let txtCiudad = document.getElementById("txtCiudad").value;
-        let txtCp = document.getElementById("txtCp").value;
+        let txtEmail = document.getElementById("txtEmail").value;
+        let txtPass = document.getElementById("txtPass").value;
 
         sessionStorage.setItem("nombre",JSON.stringify(txtNombre));
         sessionStorage.setItem("apellido",JSON.stringify(txtApellido));
-        sessionStorage.setItem("ciudad",JSON.stringify(txtCiudad));
-        sessionStorage.setItem("cp",JSON.stringify(txtCp));
+        sessionStorage.setItem("email",JSON.stringify(txtEmail));
+        sessionStorage.setItem("password",JSON.stringify(txtPass))
 
         alert("Los datos se guardaron exito")
     }
@@ -20,13 +20,13 @@
     }
 
     function verificar(){
-        let loginNombre = document.getElementById("loginNombre").value;
-        let loginApellido = document.getElementById("loginApellido").value;
-        let storageNombre =  JSON.parse(sessionStorage.getItem("nombre"));
-        let storageApellido =  JSON.parse(sessionStorage.getItem("apellido"));
+        let loginEmail = document.getElementById("loginEmail").value;
+        let loginPassword = document.getElementById("loginPassword").value;
+        let storageEmail =  JSON.parse(sessionStorage.getItem("email"));
+        let storagePassword =  JSON.parse(sessionStorage.getItem("password"));
     
-        if (loginNombre === storageNombre && loginApellido === storageApellido){
-            alert(`Bienvenido/a ${loginNombre} ${loginApellido}`),
+        if (loginEmail === storageEmail && loginPassword === storagePassword){
+            // alert(`Bienvenido/a ${loginNombre} ${loginApellido}`),
             window.location.href = "main.html";
         }else{
             alert("ACCESO DENEGADO, VUELVA A INTENTAR");

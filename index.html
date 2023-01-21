@@ -11,36 +11,50 @@
 </head>
 
 <body>
+<nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="logo_aerolineas.png" alt="Logo Aerolineas Argentinas"  height="24">
+        </a>
+    </div>
+</nav>
+  
+  
+
+
     <div class="container mt-2">
-      <div class="row">
-        <div class="container rounded col-12 container_portada">
-            <!-- <img src="vuelo_portada.jpg" class="img-fluid rounded img_portada" alt=""> -->
-        </div>
-        <div class="container col-md-6 col-12 mt-5">
-            <form action="">
+      <div class="row mb-4">
+        <div class="container rounded col-12 container_portada"></div>
+
+        <div class="container col-md-6 col-12 mt-4 container_registro">
+            <div class="form_registro">
                 <h2 class="titulos">Registrate GRATIS</h2>
                 <label for="" class="form-label">Nombre</label>
                 <input class="form-control" type="text" name="" id="txtNombre" placeholder="Nombre">
                 
                 <label for="" class="form-label">Apellido</label>
                 <input class="form-control" type="text" name="" id="txtApellido" placeholder="Apellido">
-                <!-- <input type="text" name="" id="txtCiudad" placeholder="Ciudad"> -->
+                
+                <label for="" class="form-label">Email</label>
+                <input class="form-control" type="text" name="" id="txtEmail" placeholder="mail@mail.com">
     
-                <label for="" class="form-label">Seleccione la Ciudad</label>
+                
+                <label for="" class="form-label">Contraseña</label>
+                <input class="form-control" type="text" name="" id="txtPass" placeholder="Escriba su nueva contraseña">
+
+
+<!-- 
                 <select class="form-control" name="lenguajes" id="txtCiudad">
                     <option value="rosario">Rosario</option>
                     <option value="tucuman">Tucuman</option>
                     <option value="bariloche">Bariloche</option>
-                </select>
-            
-                <label for="" class="form-label">Código Postal</label>
-                <input class="form-control" type="text" name="" id="txtCp" placeholder="Cód. Postal">
+                </select> -->
                 <button type="submit" id="guardar_datos" class="btn btn-primary mt-3" onclick="guardar()">Guardar Datos</button>
-            </form>
+            </div>
         </div>
 
-        <div class="container col-md-6 col-12">
-            <div class="mt-5">
+        <div class="container col-md-6 col-12 mt-4 container_sesion">
+            <!-- <div class="mt-5">
                 <h2 class="titulos">Verificar los datos</h2>
                 <button type="submit" id="" class="btn btn-primary" onclick="resultados()">Verificar datos</button>
                 <br>
@@ -48,14 +62,14 @@
                 <p id="txtResultados"></p>
             </div>
         
-            <hr>
-        
-            <div class="mt-2">
+            <hr> -->
+            <div class="form_sesion">
                 <h2 class="titulos">Iniciar Sesión</h2>
-                <label for="" class="form-label">Nombre</label>
-                <input class="form-control" type="text" name="" id="loginNombre" placeholder="Nombre">
-                <label for="" class="form-label">Apellido</label>
-                <input class="form-control" type="text" name="" id="loginApellido" placeholder="Apellido">
+                <label for="" class="form-label">Email</label>
+                <input class="form-control" type="text" name="" id="loginEmail" placeholder="mail@mail.com">
+                <label for="" class="form-label">Contraseña</label>
+                <input class="form-control" type="text" name="" id="loginPassword" placeholder="Ingrese su contraseña">
+                <p class="">Olvidé mi contraseña</p>
                 <button type="submit" class="btn btn-primary mt-3" id="verificar" onclick="verificar()">Ingresar</button>
             </div>
         </div>

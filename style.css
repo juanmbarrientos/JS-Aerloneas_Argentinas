@@ -1,12 +1,39 @@
+body{
+    background-image: url(patron.jpg);
+    background-size: 40%;
+}
 
 .titulos{
     font-weight: 600;
-    font-size: 24;
+    font-size: 1.3rem;
+    color: #444;
+    margin-bottom: 0px;
+}
+
+.form-label{
+    margin-bottom: 0px;
+    margin-top: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+.container_registro, .container_sesion{
+    display: flex;
+    justify-content: center;
+}
+
+.form_sesion, .form_registro{
+    width: 84%;
+    /* height: auto; */
+    padding: 16px 32px;
+    border-radius: 10px;
+    background-color: white;
 }
 
 .container_portada{
-    height: 180px;
-    background-image: url(vuelo_portada.jpg);
+    margin-top: 50px;
+    height: 150px;
+    background-image: url(portada_aerolineas.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -15,7 +42,6 @@
 
 .vuelo_card{
     max-height: 130px;
-
     object-fit: cover;
 }
 
