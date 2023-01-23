@@ -3,78 +3,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Proyecto Aerolineas Argentinas</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="storage.js"></script>
-  
 </head>
-
 <body>
-<nav class="navbar navbar-light bg-light fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="logo_aerolineas.png" alt="Logo Aerolineas Argentinas"  height="24">
-        </a>
-    </div>
-</nav>
-  
-  
-
-
-    <div class="container mt-2">
-      <div class="row mb-4">
-        <div class="container rounded col-12 container_portada"></div>
-
-        <div class="container col-md-6 col-12 mt-4 container_registro">
-            <div class="form_registro">
-                <h2 class="titulos">Registrate GRATIS</h2>
-                <label for="" class="form-label">Nombre</label>
-                <input class="form-control" type="text" name="" id="txtNombre" placeholder="Nombre">
-                
-                <label for="" class="form-label">Apellido</label>
-                <input class="form-control" type="text" name="" id="txtApellido" placeholder="Apellido">
-                
-                <label for="" class="form-label">Email</label>
-                <input class="form-control" type="text" name="" id="txtEmail" placeholder="mail@mail.com">
-    
-                
-                <label for="" class="form-label">Contraseña</label>
-                <input class="form-control" type="text" name="" id="txtPass" placeholder="Escriba su nueva contraseña">
-
-
-<!-- 
-                <select class="form-control" name="lenguajes" id="txtCiudad">
-                    <option value="rosario">Rosario</option>
-                    <option value="tucuman">Tucuman</option>
-                    <option value="bariloche">Bariloche</option>
-                </select> -->
-                <button type="submit" id="guardar_datos" class="btn btn-primary mt-3" onclick="guardar()">Guardar Datos</button>
-            </div>
+    <nav class="navbar navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="logo_aerolineas.png" alt="Logo Aerolineas Argentinas"  height="24">
+            </a>
         </div>
+    </nav>
 
-        <div class="container col-md-6 col-12 mt-4 container_sesion">
-            <!-- <div class="mt-5">
-                <h2 class="titulos">Verificar los datos</h2>
-                <button type="submit" id="" class="btn btn-primary" onclick="resultados()">Verificar datos</button>
-                <br>
-                <label for="">Nombre</label> 
-                <p id="txtResultados"></p>
-            </div>
-        
-            <hr> -->
-            <div class="form_sesion">
-                <h2 class="titulos">Iniciar Sesión</h2>
-                <label for="" class="form-label">Email</label>
-                <input class="form-control" type="text" name="" id="loginEmail" placeholder="mail@mail.com">
-                <label for="" class="form-label">Contraseña</label>
-                <input class="form-control" type="text" name="" id="loginPassword" placeholder="Ingrese su contraseña">
-                <p class="">Olvidé mi contraseña</p>
-                <button type="submit" class="btn btn-primary mt-3" id="verificar" onclick="verificar()">Ingresar</button>
-            </div>
-        </div>
+    <div class="container container_general d-flex justify-content-center mb-3">
+      <div class="form_presentacion">
+        <h1 class="titulos mb-2">Proyecto en JavaScript - Aerolineas Argentinas</h1>
+        <p class="parrafo mb-2"><b style="color: red;"> Aclaración: Este proyecto es de caracter personal y de práctica profesional. NADA tiene que ver la Empresa AEROLINEAS ARGENTINAS con la siguiente página.</b></p>
+        <p class="parrafo mb-2">Usando mayormente JavaScript, me propusé crear este proyecto de login, almacenamiento de datos en LocalStorage y SesionStorage combinados con un archivo JSON (simulando ser una API) que alimenta los datos visibles en el main y los devuelve en forma de Cards. Finalizada la estructura y funcionalidad de la web, centré mis conomientos en UX y UI para reversionar parte del sitio de Aerolineas Argentinas. Este proceso fue una excelente manera de practicar y demostrar mi conomiento aplicado a un Proyecto Integral de la vida real. A continuación detallo algunos conceptos con los cuales trabajé y su estado de desarrollo a la fecha ya que continuo agregando contenido.</p>
 
-        </div>
+        <h2 class="titulos">General</h2>
+        <ul>
+            <li>Este sitio es Responsive. <span style="color: green;"><b>Verificado</b></span></li>
+            <li>Utiliza CSS customizado y Bootstrap 5. <span style="color: green;"><b>Verificado</b></span></li>
+            <li>Diseñado bajo conceptos y practicas de UX y UI. <span style="color: green;"><b>Verificado</b></span></li>            
+        </ul>
+
+        <h2 class="titulos">Index de Ingreso</h2>
+        <ul>
+            <li>Registro de Usuario con almacenamiento de datos en SesionStorage. <span style="color: green;"><b>En Funcionamiento</b></span></li>
+            <li>Validación de Nuevo Registro. <span style="color: orange;"><b>En proceso</b></span></li>
+            <li>Inicio de Sesión (con los datos de SesionStorage). <span style="color: green;"><b>En Funcionamiento</b></span></li>
+            <li>Validación de ingreso. <span style="color: orange;"><b>En proceso</b></span></li>
+            <li>Olvidé mi contraseña. <span style="color: orange;"><b>En proceso</b></span></li>
+        </ul>
+
+        <h2 class="titulos">Main de Vuelos</h2>
+        <ul>
+            <li>Los datos de usuarios son restrablecidos del SesionStorage (ej: Nombre). <span style="color: green;"><b>En Funcionamiento</b></span></li>
+            <li>Las Cards son responsive y adaptables. <span style="color: green;"><b>En Funcionamiento</b></span></li>
+            <li>Los información de los vuelos son obtenidos de un archivo JSON. <span style="color: green;"><b>En Funcionamiento</b></span></li>
+            <li>Las imagenes e Iconos de las Cards tambien estan almacenadas en JSON como objetos. <span style="color: green;"><b>En Funcionamiento</b></span></li>
+            <li>Al comprar un vuelo, el mismo es almacena en un Array como Objeto y luego se almacena en LocalStorage. <span style="color: orange;"><b>En proceso</b></span></li>
+        </ul>
+        <hr>
+        <a class="btn btn-primary btn-proyecto" href="login.html" target="_parent">Ir al Proyecto</a>
       </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -1,3 +1,4 @@
+/* GENERALES */
 body{
     background-image: url(patron.jpg);
     background-size: 40%;
@@ -10,6 +11,46 @@ body{
     margin-bottom: 0px;
 }
 
+.parrafo{
+    font-weight: 400;
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 0px;
+}
+
+.btn-proyecto{
+    float: right;
+}
+
+
+/* NAVBAR */
+.navbar_menu{
+    display: flex;
+    justify-content: space-between;
+}
+
+.user{
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #0081C6;
+    margin-bottom: 0px;
+}
+
+
+
+/* REGISTRO */
+.container_registro, .container_sesion{
+    display: flex;
+    justify-content: center;
+}
+
+.form_sesion, .form_registro, .form_presentacion{
+    width: 84%;
+    padding: 16px 32px;
+    border-radius: 10px;
+    background-color: white;
+}
+
 .form-label{
     margin-bottom: 0px;
     margin-top: 8px;
@@ -17,29 +58,32 @@ body{
     color: #444;
 }
 
-.container_registro, .container_sesion{
-    display: flex;
-    justify-content: center;
+
+/* CONTAINERS */
+.container_general{
+    margin-top: 70px !important;
 }
 
-.form_sesion, .form_registro{
-    width: 84%;
-    /* height: auto; */
-    padding: 16px 32px;
-    border-radius: 10px;
-    background-color: white;
-}
-
-.container_portada{
-    margin-top: 50px;
-    height: 150px;
-    background-image: url(portada_aerolineas.jpg);
+.container_portada_index, .container_portada_main{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     object-fit: fill;
 }
 
+.container_portada_index{
+    height: 150px;
+    background-image: url(portada_aerolineas.jpg);
+}
+
+.container_portada_main{
+    height: 250px;
+    background-image: url(portada_main.jpg);
+}
+
+
+
+/* ARRAY DE CARDS */
 .vuelo_card{
     max-height: 130px;
     object-fit: cover;
@@ -49,13 +93,15 @@ body{
     padding: 1rem !important;
 }
 
-.empresa{
-    font-weight: 600;
+.promo, .empresa{
+    font-weight: 400;
     margin: 0 !important;
+    font-size: .8rem;
 }
 
 .ruta{
     font-weight: 600;
+    font-size: 1.2rem;
     margin: 0 !important;
 }
 
@@ -66,9 +112,35 @@ body{
 
 .descripcion{
     font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.precio_comprar{
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .precio{
     font-size: 24px;
     font-weight: 600;
+    margin: 0px;
+}
+
+.incluye{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.incluye img{
+    height: 36px;
+}
+
+
+
+/* MEDIA QUERY */
+@media (min-width:396px) and (max-width:991px){
+    .user{
+        display: none;
+    }
 }

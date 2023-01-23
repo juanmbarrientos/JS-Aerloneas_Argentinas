@@ -41,14 +41,13 @@
         window.location.replace('index.html');
     }
 
+
+    
+    
  
 // traerDatos() se ejecuta solo - traerDatos solo se ejecuta cuando le haces clic
 document.onload = traerDatos();
 // document.querySelector("#boton").addEventListener('click', traerDatos());
-
-
-
-
 
 function traerDatos(){
     // console.log("dentro de la funcion");
@@ -65,26 +64,42 @@ function traerDatos(){
             let res = document.querySelector('#row_vuelos');
             res.innerHTML= '';
 
+            const txtNombreUser = document.getElementById("txtNombreUser");
+            const txtNombreUser2 = document.getElementById("txtNombreUser2");
+    
+    
+            txtNombreUser2.textContent = (JSON.parse(sessionStorage.getItem("nombre")));
+            txtNombreUser.textContent = (JSON.parse(sessionStorage.getItem("nombre")));
+
             for(let item of datos){
                 res.innerHTML += `
                 <div class="col col-lg-3 col-md-6 col-12">               
                     <div class="card rounded mb-5">
                         <img src="${item.foto}" class="vuelo_card" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title empresa" id="empresa">${item.empresa}</h5>
-                            <p class="card-text ruta" id="promo">${item.index}</p>
-                            <p class="card-text ruta" id="ruta">${item.ruta}</p>
+                        <p class="card-text ruta" id="ruta">${item.ruta}</p>
+                        <p class="card-text promo" id="promo">Promo ${item.index}</p>
+                        <h5 class="card-title empresa" id="empresa">Operado por: ${item.empresa}</h5>
                             <hr class="hr-sep">
                             <p class="card-text descripcion">${item.descripción}</p>
-                            <form action="">
-                                <label for="">ida</label>
-                                <input type="date" name="" id="ida">
-                                <br>
-                                <label for="">vuelta</label>
-                                <input type="date" name="" id="vuelta">
+                            <form action="" class="mb-1">
+                                <label class= "label-control descripcion" for="">Ida</label>
+                                <input class="form-control" type="date" name="" id="ida">
+                                <label class= "label-control descripcion" or="">Vuelta</label>
+                                <input class="form-control" type="date" name="" id="vuelta">
                             </form>
-                            <p id="precio" class="precio">$ ${item.precio}</p>
-                            <button type="submit"class="btn btn-warning" onclick="comprar()">¡Comprar! </button>
+                            <div>
+                                <p class="descripcion">Incluye</p>
+                                <div class="incluye">
+                                    <img src="${item.equipaje}">
+                                    <img src="${item.refrigerio}">
+                                    <img src="${item.ticket}">
+                                </div>
+                            </div>
+                            <div class="precio_comprar">
+                                <p id="precio" class="precio">$${item.precio}</p>
+                                <button type="submit"class="btn btn-warning" onclick="comprar()">¡Comprar! </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -105,7 +120,6 @@ function comprar(){
         let vuelta = document.getElementById("vuelta").value;
         const precio = document.getElementById("precio").textContent;
 
-
         const arr_vue = {
             "id": id,
             "buss": empresa,
@@ -115,11 +129,9 @@ function comprar(){
             "prec": precio, 
         }
 
-
         // ref 1
         array_vuelo.push(arr_vue);
         localStorage.setItem(id, JSON.stringify(array_vuelo));
-
         
         // localStorage.setItem("empresa", JSON.stringify(empresa));
         // localStorage.setItem("ruta", JSON.stringify(ruta));
