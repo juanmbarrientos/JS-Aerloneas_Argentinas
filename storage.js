@@ -1,37 +1,99 @@
+function guardar(){
+    
+    // captura los inputs
+    let txtNombreInput = document.getElementById("txtNombre");
+    let txtApellidoInput = document.getElementById("txtApellido");
+    let txtEmailInput = document.getElementById("txtEmail");
+    let txtPassInput = document.getElementById("txtPass");
+    
+    // captura los valores de los inputs
+    let txtNombre = document.getElementById("txtNombre").value;
+    let txtApellido = document.getElementById("txtApellido").value;
+    let txtEmail = document.getElementById("txtEmail").value;
+    let txtPass = document.getElementById("txtPass").value;
 
-    function guardar(){
-        let txtNombre = document.getElementById("txtNombre").value;
-        let txtApellido = document.getElementById("txtApellido").value;
-        let txtEmail = document.getElementById("txtEmail").value;
-        let txtPass = document.getElementById("txtPass").value;
-
+    if (txtNombre !== "" || txtApellido !== "" || txtEmail !== "" || txtPass !== ""){
+        alert("Los datos se guardaron exito")
         sessionStorage.setItem("nombre",JSON.stringify(txtNombre));
         sessionStorage.setItem("apellido",JSON.stringify(txtApellido));
         sessionStorage.setItem("email",JSON.stringify(txtEmail));
-        sessionStorage.setItem("password",JSON.stringify(txtPass))
-
-        alert("Los datos se guardaron exito")
+        sessionStorage.setItem("password",JSON.stringify(txtPass));
+        txtNombreInput.classList.add("campo_correcto");
+        txtApellidoInput.classList.add("campo_correcto");
+        txtEmailInput.classList.add("campo_correcto");
+        txtPassInput.classList.add("campo_correcto");
     }
+}
 
-    function resultados(){
-        let resultados = document.getElementById("txtResultados");
-        let resNombre =  JSON.parse(sessionStorage.getItem("nombre"));
-        resultados.innerHTML = resNombre;
-    }
+        // if (txtNombre === "" || txtApellido === "" || txtEmail === "" || txtPass === ""){
+        //     alert("Todos los campos deben estar completos");
+        //     if(txtNombre === ""){
+        //         alert("Debe completar el campo Nombre");
+        //         txtNombreInput.classList.add("bg-danger");
+        //     }else if (txtApellido === ""){
+        //         alert("Debe completar el campo Apellido");
+        //         txtApellidoInput.classList.add("bg-danger");
+        //     }else if (txtEmail === ""){
+        //         alert("Debe completar el campo eMail");
+        //         txtEmail2.classList.add("bg-danger");
+        //     }else if (txtPass === ""){
+        //         alert("Debe completar el campo Contraseña");
+        //         txtPassInput.classList.add("bg-danger");
+        //     }else{
+        //     sessionStorage.setItem("nombre",JSON.stringify(txtNombre));
+        //     sessionStorage.setItem("apellido",JSON.stringify(txtApellido));
+        //     sessionStorage.setItem("email",JSON.stringify(txtEmail));
+        //     sessionStorage.setItem("password",JSON.stringify(txtPass));
+        //     alert("Los datos se guardaron exito")
+        // }
+    
+    
+        
+       
+    
+
+    
+
+    // funcion inutilizable, solo mostraba el nombre para verificar
+    // function resultados(){
+    //     let resultados = document.getElementById("txtResultados");
+    //     let resNombre =  JSON.parse(sessionStorage.getItem("nombre"));
+    //     resultados.innerHTML = resNombre;
+    // }
 
     function verificar(){
+        // captura los valores de los inputs
         let loginEmail = document.getElementById("loginEmail").value;
         let loginPassword = document.getElementById("loginPassword").value;
+
+        // captura los inputs
+        let loginEmailInput = document.getElementById("loginEmail");
+        let loginPasswordInput = document.getElementById("loginPassword");
+        
+        // compara con el SessionStorage
+        let storageNombre =  JSON.parse(sessionStorage.getItem("nombre"));
+        let storageApellido =  JSON.parse(sessionStorage.getItem("apellido"));
         let storageEmail =  JSON.parse(sessionStorage.getItem("email"));
         let storagePassword =  JSON.parse(sessionStorage.getItem("password"));
     
         if (loginEmail === storageEmail && loginPassword === storagePassword){
-            // alert(`Bienvenido/a ${loginNombre} ${loginApellido}`),
+            loginEmailInput.classList.add("campo_correcto");
+            loginPasswordInput.classList.add("campo_correcto")
+            alert(`Bienvenido/a ${storageNombre} ${storageApellido}`),
             window.location.href = "main.html";
         }else{
             alert("ACCESO DENEGADO, VUELVA A INTENTAR");
+            if(loginEmail !== storageEmail && loginPassword !== storagePassword){
+                loginEmailInput.classList.add("campo_vacio");
+                loginPasswordInput.classList.add("campo_vacio");
+            }else if(loginEmail !== storageEmail){
+                    loginEmailInput.classList.add("campo_vacio");
+                    loginPasswordInput.classList.add("campo_correcto");
+                }else{
+                    loginPasswordInput.classList.add("campo_vacio");
+                    loginEmailInput.classList.add("campo_correcto");
+                }
         }
-
     }
 
     function logout(){
