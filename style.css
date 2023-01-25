@@ -58,6 +58,16 @@ body{
     color: #444;
 }
 
+.campo_vacio{
+    background-color: rgb(255, 245, 245) !important;
+    border: 1px solid red !important;
+}
+
+.campo_correcto{
+    background-color: rgb(245, 255, 246) !important;
+    border: 1px solid green !important;
+}
+
 
 /* CONTAINERS */
 .container_general{
