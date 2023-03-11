@@ -58,7 +58,7 @@ body{
     color: #444;
 }
 
-.campo_vacio{
+.campo_incorrecto{
     background-color: rgb(255, 245, 245) !important;
     border: 1px solid red !important;
 }
@@ -68,6 +68,29 @@ body{
     border: 1px solid green !important;
 }
 
+.ayudaNombre, .ayudaApellido{
+    display: none !important;
+    color: red !important;
+    font-size: 7px !important;
+}
+
+.ayudaMailVacio{
+    display: none !important;
+    color: red !important;
+    font-size: 7px !important;
+}
+
+.ayudaMailIncorrecto{
+    display: none !important;
+    color: red !important;
+    font-size: 7px !important;
+}
+
+.ocultarAdvertencia{
+    display: none !important;
+    color: red !important;
+    font-size: 7px !important;
+}
 
 /* CONTAINERS */
 .container_general{

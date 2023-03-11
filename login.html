@@ -28,16 +28,22 @@
                 <h2 class="titulos">Registrate GRATIS</h2>
                 <label for="" class="form-label">Nombre</label>
                 <input class="form-control" type="text" name="" id="txtNombre" placeholder="Nombre">
+                <small id="ayudaNombre" class="form-text ayudaNombre">Este campo Nombre no puede estar vacio.</small>
                 
                 <label for="" class="form-label">Apellido</label>
                 <input class="form-control" type="text" name="" id="txtApellido" placeholder="Apellido">
+                <small id="ayudaApellido" class="form-text ayudaApellido">Este campo Apellido no puede estar vacio.</small>
+
                 
                 <label for="" class="form-label">Email</label>
                 <input class="form-control" type="text" name="" id="txtEmail" placeholder="mail@mail.com">
-    
+                <small id="ayudaMailVacio" class="form-text ayudaMailVacio">Este campo Email no puede estar vacio.</small>
+                <small id="ayudaMailIncorrecto" class="form-text ayudaMailIncorrecto">Ingrese un Email válido.</small>
+
                 
                 <label for="" class="form-label">Contraseña</label>
                 <input class="form-control" type="password" name="" id="txtPass" placeholder="Escriba su nueva contraseña">
+                <small id="passwordHelpBlock" class="form-text">Debe incluir al menos un número, un símbolo y una letra mayúscula y minúscula</small>
 
                 <button type="submit" id="guardar_datos" class="btn btn-primary mt-3" onclick="guardar()">Guardar Datos</button>
             </div>
