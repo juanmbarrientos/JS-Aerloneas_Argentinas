@@ -3,80 +3,68 @@ function validar() {
   let txtApellidoInput = document.getElementById("txtApellido");
   let txtEmailInput = document.getElementById("txtEmail");
   let txtPassInput = document.getElementById("txtPass");
-  let ayudaNombre = document.getElementById("ayudaNombre")
-  let ayudaApellido = document.getElementById("ayudaApellido")
-  let ayudaMailVacio = document.getElementById("ayudaMailVacio")
-  let ayudaMailIncorrecto = document.getElementById("ayudaMailIncorrecto")
   let txtNombre = document.getElementById("txtNombre").value;
   let txtApellido = document.getElementById("txtApellido").value;
   let txtEmail = document.getElementById("txtEmail").value;
   let txtPass = document.getElementById("txtPass").value;
+  let resultadoNombre = document.getElementById("resultadoNombre");
+  let resultadoApellido = document.getElementById("resultadoApellido");
+  let resultadoEmail = document.getElementById("resultadoEmail");
+  let resultadoPassword = document.getElementById("resultadoPassword")
 
   // Validar campo Nombre
   if (txtNombre.trim() == "") {
-    // alert("El campo Nombre es requerido");
     txtNombreInput.classList.add("campo_incorrecto");
-    ayudaNombre.classList.remove("ayudaNombre");
+    resultadoNombre.innerHTML = `<span id="ayudaNombre" class="error_validacion">El campo Nombre no puede estar vacio.</span>`
     // return false;
   } else {
     txtNombreInput.classList.add("campo_correcto");
-    ayudaNombre.classList.add("ayudaNombre");
+    resultadoNombre.innerHTML = `<span id="ayudaNombre" class="aprobada_validacion">Campo validado.</span>`
   }
 
   // Validar campo Apellido
   if (txtApellido.trim() == "") {
-    // alert("El campo Apellido es requerido");
     txtApellidoInput.classList.add("campo_incorrecto");
-    ayudaApellido.classList.remove("ayudaApellido");
+    resultadoApellido.innerHTML = `<span id="ayudaApellido" class="error_validacion">El campo Apellido no puede estar vacio.</span>`
     // return false;
   } else {
     txtApellidoInput.classList.add("campo_correcto");
-    ayudaApellido.classList.add("ayudaApellido")
-
+    resultadoApellido.innerHTML = `<span id="ayudaApellido" class="aprobada_validacion">Campo validado.</span>`
   }
 
   // Validar campo Email
   if (txtEmail.trim() == "") {
-    // alert("El campo Email es requerido");
     txtEmailInput.classList.add("campo_incorrecto");
-    ayudaMailVacio.classList.remove("ayudaMailVacio");
-    ayudaMailIncorrecto.classList.add("ayudaMailIncorrecto");
+    resultadoEmail.innerHTML = `<span id="ayudaApellido" class="error_validacion">El campo Email no puede estar vacio.</span>`
     // return false;
   } else if (!/\S+@\S+\.\S+/.test(txtEmail)) {
-    // alert("Ingrese un correo electrónico válido");
-    ayudaMailVacio.classList.add("ayudaMailVacio");
     txtEmailInput.classList.add("campo_incorrecto");
-    ayudaMailIncorrecto.classList.remove("ayudaMailIncorrecto");
+    resultadoEmail.innerHTML = `<span id="ayudaApellido" class="error_validacion">El Email es inválido.</span>`
     // return false;
   } else {
     txtEmailInput.classList.add("campo_correcto");
-    ayudaMailVacio.classList.add("ocultarAdvertencia");
-    ayudaMailIncorrecto.classList.add("ocultarAdvertencia");
-    // ayudaMailVacio.classList.remove("ayudaEmailVacio");
-    // ayudaMailIncorrecto.classList.remove("ayudaEmailIncorrecto");
+    resultadoEmail.innerHTML = `<span id="ayudaApellido" class="aprobada_validacion">Campo validado.</span>`
   }
 
   // Validar campo Contraseña
   if (txtPass.trim() == "") {
-    // alert("El campo Contraseña es requerido");
     txtPassInput.classList.add("campo_incorrecto");
+    resultadoPassword.innerHTML = `<span id="ayudaApellido" class="error_validacion">Contraseña vacia, recuerde que son mínimo 10 caracteres debe incluir al menos un número, un símbolo y una letra mayúscula y minúscula.</span>`
     return false;
   } else if (txtPass.length > 10) {
-    // alert("La contraseña debe tener máximo 10 caracteres");
     txtPassInput.classList.add("campo_incorrecto");
+    resultadoPassword.innerHTML = `<span id="ayudaApellido" class="error_validacion">Contraseña inválida, recuerde que son mínimo 10 caracteres debe incluir al menos un número, un símbolo y una letra mayúscula y minúscula.</span>`
     return false;
   } else if (
     !/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(txtPass)
   ) {
-    // alert(
-    //   "La contraseña debe incluir al menos un número, un símbolo y una letra mayúscula y minúscula"
-    // );
     txtPassInput.classList.add("campo_incorrecto");
+    resultadoPassword.innerHTML = `<span id="ayudaApellido" class="error_validacion">Contraseña inválida, recuerde que son mínimo 10 caracteres debe incluir al menos un número, un símbolo y una letra mayúscula y minúscula.</span>`
     return false;
   } else {
     txtPassInput.classList.add("campo_correcto");
+    resultadoPassword.innerHTML = `<span id="ayudaApellido" class="aprobada_validacion">Campo validado.</span>`
   }
-
   // Si todos los campos son válidos, retornar true
   return true;
 }
@@ -105,26 +93,32 @@ function verificar() {
   let loginEmailInput = document.getElementById("loginEmail");
   let loginPasswordInput = document.getElementById("loginPassword");
 
-  // compara con el SessionStorage
-  let storageNombre = JSON.parse(sessionStorage.getItem("nombre"));
-  let storageApellido = JSON.parse(sessionStorage.getItem("apellido"));
+  // captura los span html para insertar el resultado de la validación
+  let resultadoLoginPassword = document.getElementById("resultadoLoginPassword");
+  let resultadoLoginEmail = document.getElementById("resultadoLoginEmail");
+
   let storageEmail = JSON.parse(sessionStorage.getItem("email"));
   let storagePassword = JSON.parse(sessionStorage.getItem("password"));
 
   if (loginEmail === storageEmail && loginPassword === storagePassword) {
     loginEmailInput.classList.add("campo_correcto");
     loginPasswordInput.classList.add("campo_correcto");
-    alert(`Bienvenido/a ${storageNombre} ${storageApellido}`),
+    resultadoLoginEmail.innerHTML = `<span id="ayudaApellido" class="aprobada_validacion">Campo validado.</span>`;
+    resultadoLoginPassword.innerHTML = `<span id="ayudaApellido" class="aprobada_validacion">Campo validado.</span>`;
       (window.location.href = "main.html");
   } else {
-    alert("ACCESO DENEGADO, VUELVA A INTENTAR");
+    // alert("ACCESO DENEGADO, VUELVA A INTENTAR");
     if (loginEmail !== storageEmail && loginPassword !== storagePassword) {
       loginEmailInput.classList.add("campo_vacio");
       loginPasswordInput.classList.add("campo_vacio");
+      resultadoLoginPassword.innerHTML = `<span id="ayudaApellido" class="error_validacion">El campo Contraseña está vacio.</span>`;
+      resultadoLoginEmail.innerHTML = `<span id="ayudaApellido" class="error_validacion">El campo Email está vacio.</span>`;
     } else if (loginEmail !== storageEmail) {
+      resultadoLoginEmail.innerHTML = `<span id="ayudaApellido" class="error_validacion">El Email no coincide con el registro.</span>`;
       loginEmailInput.classList.add("campo_vacio");
       loginPasswordInput.classList.add("campo_correcto");
     } else {
+      resultadoLoginPassword.innerHTML = `<span id="ayudaApellido" class="error_validacion">La contraseña no coincide con el registro.</span>`;
       loginPasswordInput.classList.add("campo_vacio");
       loginEmailInput.classList.add("campo_correcto");
     }

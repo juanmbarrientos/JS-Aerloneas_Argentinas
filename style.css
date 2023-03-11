@@ -68,28 +68,17 @@ body{
     border: 1px solid green !important;
 }
 
-.ayudaNombre, .ayudaApellido{
-    display: none !important;
+.error_validacion{
+    /* display: none ; */
     color: red !important;
-    font-size: 7px !important;
+    font-weight: 700;
+    font-size: 11px !important;
 }
 
-.ayudaMailVacio{
-    display: none !important;
-    color: red !important;
-    font-size: 7px !important;
-}
-
-.ayudaMailIncorrecto{
-    display: none !important;
-    color: red !important;
-    font-size: 7px !important;
-}
-
-.ocultarAdvertencia{
-    display: none !important;
-    color: red !important;
-    font-size: 7px !important;
+.aprobada_validacion{
+    color: green !important;
+    font-weight: 700;
+    font-size: 11px !important;
 }
 
 /* CONTAINERS */

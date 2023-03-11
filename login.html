@@ -4,12 +4,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto Aerolineas Argentinas</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <script src="storage.js"></script>
-  
 </head>
-
 <body>
     <nav class="navbar navbar-light bg-light fixed-top">
         <div class="container">
@@ -28,22 +26,19 @@
                 <h2 class="titulos">Registrate GRATIS</h2>
                 <label for="" class="form-label">Nombre</label>
                 <input class="form-control" type="text" name="" id="txtNombre" placeholder="Nombre">
-                <small id="ayudaNombre" class="form-text ayudaNombre">Este campo Nombre no puede estar vacio.</small>
+                <div id="resultadoNombre"></div>
                 
                 <label for="" class="form-label">Apellido</label>
                 <input class="form-control" type="text" name="" id="txtApellido" placeholder="Apellido">
-                <small id="ayudaApellido" class="form-text ayudaApellido">Este campo Apellido no puede estar vacio.</small>
+                <div id="resultadoApellido"></div>
 
-                
                 <label for="" class="form-label">Email</label>
                 <input class="form-control" type="text" name="" id="txtEmail" placeholder="mail@mail.com">
-                <small id="ayudaMailVacio" class="form-text ayudaMailVacio">Este campo Email no puede estar vacio.</small>
-                <small id="ayudaMailIncorrecto" class="form-text ayudaMailIncorrecto">Ingrese un Email válido.</small>
+                <div id="resultadoEmail"></div>
 
-                
                 <label for="" class="form-label">Contraseña</label>
                 <input class="form-control" type="password" name="" id="txtPass" placeholder="Escriba su nueva contraseña">
-                <small id="passwordHelpBlock" class="form-text">Debe incluir al menos un número, un símbolo y una letra mayúscula y minúscula</small>
+                <div id="resultadoPassword"></div>
 
                 <button type="submit" id="guardar_datos" class="btn btn-primary mt-3" onclick="guardar()">Guardar Datos</button>
             </div>
@@ -54,10 +49,14 @@
                 <h2 class="titulos">Iniciar Sesión</h2>
                 <label for="" class="form-label">Email</label>
                 <input class="form-control" type="text" name="" id="loginEmail" placeholder="mail@mail.com">
+                <div id="resultadoLoginEmail"></div>
+
                 <label for="" class="form-label">Contraseña</label>
                 <input class="form-control" type="password" name="" id="loginPassword" placeholder="Ingrese su contraseña">
-                <p class="">Olvidé mi contraseña </p>
-                <button type="submit" class="btn btn-primary mt-3" id="verificar" onclick="verificar()">Ingresar</button>
+                <div id="resultadoLoginPassword"></div>
+
+                <p class="mt-4 mb-2">Olvidé mi contraseña </p>
+                <button type="submit" class="btn btn-primary" id="verificar" onclick="verificar()">Ingresar</button>
             </div>
         </div>
         </div>
